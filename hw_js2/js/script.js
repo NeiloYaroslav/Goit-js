@@ -1,14 +1,24 @@
-//alert('Hello!');
-'use strict';
-var a = 5;
+function example() {
+    "use strict";
+    return true;
+}
+////alert('Hello!');
+var arrName = [];
 
-console.log('a', a);
+arrName.length = 5;
 
-var obj = {
-    pop1: 1,
-    pop2: 2
+for (var i = 0; i < 5; i++) {
+    arrName[i] = prompt('Enter name: ', '');
+    console.log('Array names: ', arrName);
 };
-console.log(obj.pop1);
 
-var keysList = Object.keys(obj);
-console.log(keysList);
+console.log('Array names: ', arrName);
+
+var yourName = prompt('Enter your name: ', '');
+console.log( arrName.indexOf(yourName) );
+
+if ( arrName.indexOf(yourName) >= 0 ) {
+    alert('Welcome ' + yourName + '!');
+} else {
+    alert('Wrong! Goodbye ' + yourName + '!');
+}
