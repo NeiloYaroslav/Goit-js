@@ -1,24 +1,44 @@
-function example() {
-    "use strict";
-    return true;
-}
-////alert('Hello!');
-var arrName = [];
+'use strict';
+//alert('Hello!');
+var arrName = [],
+Length,
+yourName;
 
 arrName.length = 5;
 
-for (var i = 0; i < 5; i++) {
+for (var i = 0, Length = arrName.length; i < Length; i++) {
     arrName[i] = prompt('Enter name: ', '');
-    console.log('Array names: ', arrName);
 };
 
 console.log('Array names: ', arrName);
 
 var yourName = prompt('Enter your name: ', '');
-console.log( arrName.indexOf(yourName) );
 
 if ( arrName.indexOf(yourName) >= 0 ) {
     alert('Welcome ' + yourName + '!');
 } else {
     alert('Wrong! Goodbye ' + yourName + '!');
 }
+
+
+//;(function(){
+//var arrName = [],
+//Length,
+//yourName;
+//
+//arrName.length = 5;
+//
+//for (var i = 0, Length = arrName.length; i < Length; i++) {
+//arrName[i] = prompt('Enter name: ', '');
+//};
+//
+//console.log('Array names: ', arrName);
+//
+//yourName = prompt('Enter your name: ', '')
+//
+//if ( arrName.indexOf(yourName) >= 0 ) {
+//alert('Welcome ' + yourName + '!');
+//} else {
+//alert('Wrong! Goodbye ' + yourName + '!');
+//}
+//})();
