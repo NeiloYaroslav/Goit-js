@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ece6e6;
+}
+
+.wrapper {
+    width: 480px;
+    margin: 0 auto;
+    padding: 0 20px 20px 20px;
+    background: #fff;
+}
+
+.headName {
+    padding: 20px 0;
+    text-align: center;
+}
+
+.test__list-question {
+    padding: 0 20px;
+}
+
+.test__question {
+    padding: 5px 0;
+
+}
+
+.test__list-answer {
+    padding: 0 20px;
+    list-style: none;
+}
+
+.test__answer {
+    padding: 5px 0;
+}
+
+.test__label {
+    cursor: pointer;
+}
+
+.checkbox {
+    margin: 0 5px;
+}
+
+
+.submit {
+    display: block;
+    width: 50%;
+    margin: 10px auto;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: #94cdfd;
+}

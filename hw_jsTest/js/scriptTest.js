@@ -1,15 +1,14 @@
-var arrName = ['1', '2', '3', '4', '5'];
-console.log('Array names: ', arrName);
+function newElement(elem, elemClass) {
+var elem = document.createElement(elem);
+elem.classList.add(elemClass);
+return elem;
+};
 
-var yourName = prompt('Enter your name: ', '');
+var wrapper = newElement('div', 'wrapper');
 
-console.log( arrName.indexOf(yourName) );
+document.body.classList.add('body');
 
+var parentBody = document.querySelectorAll('.body');
 
-if ( arrName.indexOf(yourName) >= 0 ) {
-    alert('Welcome ' + yourName + '!');
-} else {
-    alert('Wrong! Good buy ' + yourName + '!');
-}
-
+parentBody[0].appendChild(wrapper);
 
