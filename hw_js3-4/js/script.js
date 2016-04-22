@@ -1,5 +1,27 @@
-/*jslint devel: true, sloppy: true*/
+/*jslint devel: true, white: true, evil: true, forin: true, sloppy: true*/
 //alert('Hello!');
+
+function createAttribute(element, typeAttribute, valueAttribute) {
+    return element.setAttribute(typeAttribute, valueAttribute);
+}
+
+function createNewElement(elem, elemClass, selector, index) {
+    var newElement = document.createElement(elem);
+    newElement.classList.add(elemClass);
+    var parentElement = document.querySelectorAll(selector)[index];
+    parentElement.appendChild(newElement);
+    return newElement;
+}
+
+function createNewElementBefore(elem, elemClass, selector, index, nextSibling) {
+    var newElement = document.createElement(elem);
+    newElement.classList.add(elemClass);
+    var parentElement = document.querySelectorAll(selector);
+    parentElement[index].insertBefore(newElement, nextSibling);
+    return newElement;
+}
+
+//=======================================
 
 var cssJs = document.createElement('link');
 cssJs.setAttribute('type', 'text/css');
@@ -9,195 +31,123 @@ cssJs.setAttribute('href', 'css/style_js.css');
 var parentHead = document.getElementsByTagName('head');
 parentHead[0].appendChild(cssJs);
 
-//Create div.wrapper
-var wrapper = document.createElement('div');
-wrapper.classList.add('wrapper');
+var wrapper = createNewElement('div', 'wrapper', 'body', '0'); //Create div.wrapper
 
-document.body.appendChild(wrapper);
-
-//Create h1.headName
-var headName = document.createElement('h1'); //Create new element - h1
-headName.classList.add('headName'); //Create class for h1 - headName
+var headName = createNewElement('h1', 'headName', '.wrapper', '0'); //Create h1.headName
 headName.innerHTML = 'Programming`s test'; //Assign the text for h1.headName
 
-var parentWrapper = document.querySelectorAll('.wrapper'); //Find parent with class '.wrapper'
-parentWrapper[0].appendChild(headName); //Pass new element (h1.headName) for parent - div.wrapper
+var form = createNewElement('form', 'test__form', '.wrapper', '0'); //Create form
 
-//Create form
-var testForm = document.createElement('form');
-testForm.classList.add('test__form');
-document.querySelector('.wrapper').appendChild(testForm);
-
-var questionList = document.createElement('ol');
-questionList.classList.add('test__list-question');
-var parentForm = document.querySelectorAll('.test__form');
-parentForm[0].appendChild(questionList);
-
+var questionList = createNewElement('ol', 'test__list-question', '.test__form', '0');
 
 //=======================================================
 //QUESTION 1
 //=======================================================
 
-var question_1 = document.createElement('li');
-question_1.classList.add('test__question');
-question_1.innerHTML = 'Question #1';
-var question_2 = document.createElement('li');
-question_2.classList.add('test__question');
-question_2.innerHTML = 'Question #2';
-var question_3 = document.createElement('li');
-question_3.classList.add('test__question');
-question_3.innerHTML = 'Question #3';
+var question1 = createNewElement('li', 'test__question', '.test__list-question', '0');
+question1.innerHTML = 'Question #1';
 
-var parentQuestionList = document.querySelectorAll('.test__list-question');
-parentQuestionList[0].appendChild(question_1);
-parentQuestionList[0].appendChild(question_2);
-parentQuestionList[0].appendChild(question_3);
+var question2 = createNewElement('li', 'test__question', '.test__list-question', '0');
+question2.innerHTML = 'Question #2';
 
-var answerList_1 = document.createElement('ul');
-answerList_1.classList.add('test__list-answer');
-var answerList_2 = document.createElement('ul');
-answerList_2.classList.add('test__list-answer');
-var answerList_3 = document.createElement('ul');
-answerList_3.classList.add('test__list-answer');
-var parentQuestion = document.querySelectorAll('.test__question');
-parentQuestion[0].appendChild(answerList_1);
-parentQuestion[1].appendChild(answerList_2);
-parentQuestion[2].appendChild(answerList_3);
+var question3 = createNewElement('li', 'test__question', '.test__list-question', '0');
+question3.innerHTML = 'Question #3';
 
+var answerList1 = createNewElement('ul', 'test__list-answer', '.test__question', '0');
+var answerList2 = createNewElement('ul', 'test__list-answer', '.test__question', '1');
+var answerList3 = createNewElement('ul', 'test__list-answer', '.test__question', '2');
 
-//==== ANSWER =====
-var answer_1_1 = document.createElement('li');
-answer_1_1.classList.add('test__answer');
-var answer_1_2 = document.createElement('li');
-answer_1_2.classList.add('test__answer');
-var answer_1_3 = document.createElement('li');
-answer_1_3.classList.add('test__answer');
-
-var answer_2_1 = document.createElement('li');
-answer_2_1.classList.add('test__answer');
-var answer_2_2 = document.createElement('li');
-answer_2_2.classList.add('test__answer');
-var answer_2_3 = document.createElement('li');
-answer_2_3.classList.add('test__answer');
-
-var answer_3_1 = document.createElement('li');
-answer_3_1.classList.add('test__answer');
-var answer_3_2 = document.createElement('li');
-answer_3_2.classList.add('test__answer');
-var answer_3_3 = document.createElement('li');
-answer_3_3.classList.add('test__answer');
-
-var parentAnswerList = document.querySelectorAll('.test__list-answer');
-parentAnswerList[0].appendChild(answer_1_1);
-parentAnswerList[0].appendChild(answer_1_2);
-parentAnswerList[0].appendChild(answer_1_3);
-parentAnswerList[1].appendChild(answer_2_1);
-parentAnswerList[1].appendChild(answer_2_2);
-parentAnswerList[1].appendChild(answer_2_3);
-parentAnswerList[2].appendChild(answer_3_1);
-parentAnswerList[2].appendChild(answer_3_2);
-parentAnswerList[2].appendChild(answer_3_3);
+var answer1_1 = createNewElement('li', 'test__answer', '.test__list-answer', '0');
+var answer1_2 = createNewElement('li', 'test__answer', '.test__list-answer', '0');
+var answer1_3 = createNewElement('li', 'test__answer', '.test__list-answer', '0');
+var answer2_1 = createNewElement('li', 'test__answer', '.test__list-answer', '1');
+var answer2_2 = createNewElement('li', 'test__answer', '.test__list-answer', '1');
+var answer2_3 = createNewElement('li', 'test__answer', '.test__list-answer', '1');
+var answer3_1 = createNewElement('li', 'test__answer', '.test__list-answer', '2');
+var answer3_2 = createNewElement('li', 'test__answer', '.test__list-answer', '2');
+var answer3_3 = createNewElement('li', 'test__answer', '.test__list-answer', '2');
 
 //==== LABEL =====
+var label1_1 = createNewElement('label', 'test__label', '.test__answer', '0');
+var label1_2 = createNewElement('label', 'test__label', '.test__answer', '1');
+var label1_3 = createNewElement('label', 'test__label', '.test__answer', '2');
+var label2_1 = createNewElement('label', 'test__label', '.test__answer', '3');
+var label2_2 = createNewElement('label', 'test__label', '.test__answer', '4');
+var label2_3 = createNewElement('label', 'test__label', '.test__answer', '5');
+var label3_1 = createNewElement('label', 'test__label', '.test__answer', '6');
+var label3_2 = createNewElement('label', 'test__label', '.test__answer', '7');
+var label3_3 = createNewElement('label', 'test__label', '.test__answer', '8');
 
-var label_1_1 = document.createElement('label');
-label_1_1.classList.add('test__label');
-label_1_1.innerHTML = 'Answer #1';
-var label_1_2 = document.createElement('label');
-label_1_2.classList.add('test__label');
-label_1_2.innerHTML = 'Answer #2';
-var label_1_3 = document.createElement('label');
-label_1_3.classList.add('test__label');
-label_1_3.innerHTML = 'Answer #3';
+label1_1.innerHTML = 'Answer #1';
+label1_2.innerHTML = 'Answer #2';
+label1_3.innerHTML = 'Answer #3';
+label2_1.innerHTML = 'Answer #1';
+label2_2.innerHTML = 'Answer #2';
+label2_3.innerHTML = 'Answer #3';
+label3_1.innerHTML = 'Answer #1';
+label3_2.innerHTML = 'Answer #2';
+label3_3.innerHTML = 'Answer #3';
 
-var label_2_1 = document.createElement('label');
-label_2_1.classList.add('test__label');
-label_2_1.innerHTML = 'Answer #1';
-var label_2_2 = document.createElement('label');
-label_2_2.classList.add('test__label');
-label_2_2.innerHTML = 'Answer #2';
-var label_2_3 = document.createElement('label');
-label_2_3.classList.add('test__label');
-label_2_3.innerHTML = 'Answer #3';
-
-var label_3_1 = document.createElement('label');
-label_3_1.classList.add('test__label');
-label_3_1.innerHTML = 'Answer #1';
-var label_3_2 = document.createElement('label');
-label_3_2.classList.add('test__label');
-label_3_2.innerHTML = 'Answer #2';
-var label_3_3 = document.createElement('label');
-label_3_3.classList.add('test__label');
-label_3_3.innerHTML = 'Answer #3';
-
-var parentAnswer = document.querySelectorAll('.test__answer');
-parentAnswer[0].appendChild(label_1_1);
-parentAnswer[1].appendChild(label_1_2);
-parentAnswer[2].appendChild(label_1_3);
-
-parentAnswer[3].appendChild(label_2_1);
-parentAnswer[4].appendChild(label_2_2);
-parentAnswer[5].appendChild(label_2_3);
-
-parentAnswer[6].appendChild(label_3_1);
-parentAnswer[7].appendChild(label_3_2);
-parentAnswer[8].appendChild(label_3_3);
 
 //==== CHECKBOX =====
 
-var checkbox_1_1 = document.createElement('input');
-checkbox_1_1.classList.add('checkbox');
-checkbox_1_1.setAttribute('type', 'checkbox');
-var checkbox_1_2 = document.createElement('input');
-checkbox_1_2.classList.add('checkbox');
-checkbox_1_2.setAttribute('type', 'checkbox');
-var checkbox_1_3 = document.createElement('input');
-checkbox_1_3.classList.add('checkbox');
-checkbox_1_3.setAttribute('type', 'checkbox');
-var parentLabel = document.querySelectorAll('.test__label');
+var checkbox1_1 = createNewElementBefore('input', 'checkbox', '.test__label', '0', label1_1.lastChild);
+var checkbox1_2 = createNewElementBefore('input', 'checkbox', '.test__label', '1', label1_2.lastChild);
+var checkbox1_3 = createNewElementBefore('input', 'checkbox', '.test__label', '2', label1_3.lastChild);
 
-var checkbox_2_1 = document.createElement('input');
-checkbox_2_1.classList.add('checkbox');
-checkbox_2_1.setAttribute('type', 'checkbox');
-var checkbox_2_2 = document.createElement('input');
-checkbox_2_2.classList.add('checkbox');
-checkbox_2_2.setAttribute('type', 'checkbox');
-var checkbox_2_3 = document.createElement('input');
-checkbox_2_3.classList.add('checkbox');
-checkbox_2_3.setAttribute('type', 'checkbox');
-var parentLabel = document.querySelectorAll('.test__label');
+var checkbox2_1 = createNewElementBefore('input', 'checkbox', '.test__label', '3', label2_1.lastChild);
+var checkbox2_2 = createNewElementBefore('input', 'checkbox', '.test__label', '4', label2_2.lastChild);
+var checkbox2_3 = createNewElementBefore('input', 'checkbox', '.test__label', '5', label2_3.lastChild);
 
-var checkbox_3_1 = document.createElement('input');
-checkbox_3_1.classList.add('checkbox');
-checkbox_3_1.setAttribute('type', 'checkbox');
-var checkbox_3_2 = document.createElement('input');
-checkbox_3_2.classList.add('checkbox');
-checkbox_3_2.setAttribute('type', 'checkbox');
-var checkbox_3_3 = document.createElement('input');
-checkbox_3_3.classList.add('checkbox');
-checkbox_3_3.setAttribute('type', 'checkbox');
+var checkbox3_1 = createNewElementBefore('input', 'checkbox', '.test__label', '6', label3_1.lastChild);
+var checkbox3_2 = createNewElementBefore('input', 'checkbox', '.test__label', '7', label3_2.lastChild);
+var checkbox3_3 = createNewElementBefore('input', 'checkbox', '.test__label', '8', label3_3.lastChild);
 
+createAttribute(checkbox1_1, 'type', 'checkbox');
+createAttribute(checkbox1_2, 'type', 'checkbox');
+createAttribute(checkbox1_3, 'type', 'checkbox');
+createAttribute(checkbox2_1, 'type', 'checkbox');
+createAttribute(checkbox2_2, 'type', 'checkbox');
+createAttribute(checkbox2_3, 'type', 'checkbox');
+createAttribute(checkbox3_1, 'type', 'checkbox');
+createAttribute(checkbox3_2, 'type', 'checkbox');
+createAttribute(checkbox3_3, 'type', 'checkbox');
 
-var parentLabel = document.querySelectorAll('.test__label');
-
-parentLabel[0].insertBefore(checkbox_1_1, label_1_1.lastChild);
-parentLabel[1].insertBefore(checkbox_1_2, label_1_2.lastChild);
-parentLabel[2].insertBefore(checkbox_1_3, label_1_3.lastChild);
-
-parentLabel[3].insertBefore(checkbox_2_1, label_2_1.lastChild);
-parentLabel[4].insertBefore(checkbox_2_2, label_2_2.lastChild);
-parentLabel[5].insertBefore(checkbox_2_3, label_2_3.lastChild);
-
-parentLabel[6].insertBefore(checkbox_3_1, label_3_1.lastChild);
-parentLabel[7].insertBefore(checkbox_3_2, label_3_2.lastChild);
-parentLabel[8].insertBefore(checkbox_3_3, label_3_3.lastChild);
 
 //==== SUBMIT =====
+var submit = createNewElement('input', 'submit', '.test__form', '0');
+createAttribute(submit, 'type', 'submit');
+createAttribute(submit, 'value', 'Check my result');
 
-var submit = document.createElement('input');
-submit.classList.add('submit');
-submit.setAttribute('type', 'submit');
-submit.setAttribute('value', 'Check my result');
 
-parentForm[0].appendChild(submit);
+//var numberQuestion = 3;  
+//var arrQuestion = [];
+//for (var i=0; i < numberQuestion; i++) {
+//    arrQuestion[i] = newElement('li', 'test__question');
+//}
+//
+//arrQuestion[0] = arrQuestion[0].innerHTML = 'Question #1';
+//arrQuestion[1] = arrQuestion[1].innerHTML = 'Question #2';
+//arrQuestion[2] = arrQuestion[2].innerHTML = 'Question #3';
+//
+//var question1 = arrQuestion[0];
+//var question2 = arrQuestion[1];
+//var question3 = arrQuestion[2];
+//
+//var parentQuestionList = document.querySelectorAll('.test__list-question');
+//
+//for (var i=0; i < parentQuestionList.length; i++) {
+//    console.log(i, parentQuestionList[i]);
+//}
+//console.log(parentQuestionList[0]);
+//
+////for (i=0; i < numberQuestion; i++) {
+////    parentQuestionList[0].appendChild(arrQuestion[i]);
+////}
+//
+//parentQuestionList[0].appendChild(question1);
+//parentQuestionList[0].appendChild(question2);
+//parentQuestionList[0].appendChild(question3);
+
+
 
