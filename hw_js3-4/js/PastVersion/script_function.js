@@ -118,36 +118,3 @@ createAttribute(checkbox3_3, 'type', 'checkbox');
 var submit = createNewElement('input', 'submit', '.test__form', '0');
 createAttribute(submit, 'type', 'submit');
 createAttribute(submit, 'value', 'Check my result');
-
-
-//var numberQuestion = 3;  
-//var arrQuestion = [];
-//for (var i=0; i < numberQuestion; i++) {
-//    arrQuestion[i] = newElement('li', 'test__question');
-//}
-//
-//arrQuestion[0] = arrQuestion[0].innerHTML = 'Question #1';
-//arrQuestion[1] = arrQuestion[1].innerHTML = 'Question #2';
-//arrQuestion[2] = arrQuestion[2].innerHTML = 'Question #3';
-//
-//var question1 = arrQuestion[0];
-//var question2 = arrQuestion[1];
-//var question3 = arrQuestion[2];
-//
-//var parentQuestionList = document.querySelectorAll('.test__list-question');
-//
-//for (var i=0; i < parentQuestionList.length; i++) {
-//    console.log(i, parentQuestionList[i]);
-//}
-//console.log(parentQuestionList[0]);
-//
-////for (i=0; i < numberQuestion; i++) {
-////    parentQuestionList[0].appendChild(arrQuestion[i]);
-////}
-//
-//parentQuestionList[0].appendChild(question1);
-//parentQuestionList[0].appendChild(question2);
-//parentQuestionList[0].appendChild(question3);
-
-
-
