@@ -14,7 +14,7 @@ body {
     background: #fff;
 }
 
-.headName {
+.test__headName {
     padding: 20px 0;
     text-align: center;
 }
@@ -31,6 +31,10 @@ body {
 .test__list-answer {
     padding: 0 20px;
     list-style: none;
+}
+
+.test__answer-item {
+    padding: 5px 0;
 }
 
 .test__answer {
