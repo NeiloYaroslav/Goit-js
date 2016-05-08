@@ -24,6 +24,7 @@ function createNewElementBefore(elem, elemClass, selector, index, nextSibling) {
     return newElement;
 }
 
+//Create and add style_js.css 
 function createCssJs() {
     var cssJs = document.createElement('link');
     cssJs.setAttribute('type', 'text/css');
@@ -36,36 +37,41 @@ function createCssJs() {
     return cssJs;
 }
 
+//Create and add DOM element - div.wrapper
 function createWrapper() {
-    var wrapper = createNewElement('div', 'wrapper', 'body', '0'); //Create div.wrapper
+    var wrapper = createNewElement('div', 'wrapper', 'body', '0'); 
     
     return wrapper;
 }
 
+//Create and add DOM element - header for test h1.test__headName
 function createHead() {
     var head = createNewElement('h1', 'test__headName', '.wrapper', '0');
         
     return head;
 }
 
+//Insert inner name for header
+function createHeadName() {
+    var parrentHeadName = document.querySelectorAll('.test__headName');
+    parrentHeadName[0].innerHTML = 'Programming`s test'; 
+}
+
+//Create and add DOM element - form.test__form
 function createForm() {
     var form = createNewElement('form', 'test__form', '.wrapper', '0');
     
     return form;
 }
 
-function createHeadName() {
-    var parrentHeadName = document.querySelectorAll('.test__headName'); //HeadName for test
-    parrentHeadName[0].innerHTML = 'Programming`s test'; //Assign the text for h1.headName
-}
-
+//Create and add DOM element - ordered list (ol) for questions
 function createQuestionList() {
     var questionList = createNewElement('ol', 'test__list-question', '.test__form', '0');
     
     return questionList;
 }
 
-
+//Create and add DOM element - items ordered list and paragraph questions and answer
 function createQuestionElement(numberQuestion) {
     var arrQuestion = [], //Create question arrey
         arrAnswerList = []; //Create answer list arrey
@@ -82,6 +88,7 @@ function createQuestionElement(numberQuestion) {
     return arrQuestion, arrAnswerList;
 }
 
+//Insert inner name for questions
 function createQuestionName(numberQuestion) {
     var parrentQuestion = document.querySelectorAll('.test__question');
     var arrQuestionName = [];
@@ -94,7 +101,7 @@ function createQuestionName(numberQuestion) {
     return arrQuestionName;
 }
 
-
+//Create and add DOM element - items unordered order for answer
 function createAnswerElement(numberQuestion, numberAnswer) {
     var arrAnswer = []; //Create answer arrey
     
@@ -108,6 +115,7 @@ function createAnswerElement(numberQuestion, numberAnswer) {
     return arrAnswer;
 }
 
+//Create and add DOM element - label and input.type=checkbox for answer
 function createLabelElement(numberQuestion, numberAnswer) {
     var arrLabel = []; //label arrey
     var length = numberQuestion * numberAnswer // length label arrey
@@ -124,6 +132,7 @@ function createLabelElement(numberQuestion, numberAnswer) {
     return arrLabel;
 }
 
+//Insert inner name for answer
 function createAnswerName(numberQuestion, numberAnswer) {
     var parrentAnswer = document.querySelectorAll('.test__answer');
     var arrAnswerName = [];
@@ -137,6 +146,7 @@ function createAnswerName(numberQuestion, numberAnswer) {
     return arrAnswerName;
 }
 
+//Create and add DOM element - input.submit
 function createSubmitElement() {
     var submit = createNewElement('input', 'submit', '.test__form', '0');
     createAttribute(submit, 'type', 'submit');
@@ -145,20 +155,21 @@ function createSubmitElement() {
     return submit;
 }
 
+//Create test. Must insert number of question and answer
 function createTest(numberQuestion, numberAnswer) {
     var test = {
-        css: createCssJs(),
-        wrapper: createWrapper(),
-        head: createHead(),
-        headName: createHeadName(),
-        form: createForm(),
-        questionList: createQuestionList(),
-        question: createQuestionElement(numberQuestion),
-        questionName: createQuestionName(numberQuestion),
-        answer: createAnswerElement(numberQuestion, numberAnswer),
-        label: createLabelElement(numberQuestion, numberAnswer),
-        answerName: createAnswerName(numberQuestion, numberAnswer),
-        submit: createSubmitElement()
+        css: createCssJs(), //Create css file
+        wrapper: createWrapper(), //Create div.wrapper
+        head: createHead(), //Create h1 for test
+        headName: createHeadName(), //Create header name for test
+        form: createForm(), //Create form for test
+        questionList: createQuestionList(), //Create question list and answer list
+        question: createQuestionElement(numberQuestion), //Create item of question list
+        questionName: createQuestionName(numberQuestion), //Create name for question
+        answer: createAnswerElement(numberQuestion, numberAnswer), //Create item of answer list
+        label: createLabelElement(numberQuestion, numberAnswer), //Create label and checkbox
+        answerName: createAnswerName(numberQuestion, numberAnswer), //Create name for answer
+        submit: createSubmitElement() //Create button "submit" for form of test
     }
     
     return test;
@@ -168,11 +179,5 @@ function createTest(numberQuestion, numberAnswer) {
 //TEST
 //=======================================================
 
-var test = createTest(3, 3);
-
-console.log(test);
-
-console.log(test.question[1]);
-
-
+var test = createTest(3, 3); //Create test: 3 questions and 3 answer for each question
 
