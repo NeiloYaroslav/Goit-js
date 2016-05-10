@@ -156,23 +156,29 @@ function createSubmitElement() {
 }
 
 //Create test. Must insert number of question and answer
-function CreateTest(numberQuestion, numberAnswer) {
-    this.css = createCssJs(), //Create css file
-    this.wrapper = createWrapper(), //Create div.wrapper
-    this.head = createHead(), //Create h1 for test
-    this.headName = createHeadName(), //Create header name for test
-    this.form = createForm(), //Create form for test
-    this.questionList = createQuestionList(), //Create question list and answer list
-    this.question = createQuestionElement(numberQuestion), //Create item of question list
-    this.questionName = createQuestionName(numberQuestion), //Create name for question
-    this.answer = createAnswerElement(numberQuestion, numberAnswer), //Create item of answer list
-    this.label = createLabelElement(numberQuestion, numberAnswer), //Create label and checkbox
-    this.answerName = createAnswerName(numberQuestion, numberAnswer), //Create name for answer
-    this.submit = createSubmitElement() //Create button "submit" for form of test
+function createTest(numberQuestion, numberAnswer) {
+    var test = {
+        css: createCssJs(), //Create css file
+        wrapper: createWrapper(), //Create div.wrapper
+        head: createHead(), //Create h1 for test
+        headName: createHeadName(), //Create header name for test
+        form: createForm(), //Create form for test
+        questionList: createQuestionList(), //Create question list and answer list
+        question: createQuestionElement(numberQuestion), //Create item of question list
+        questionName: createQuestionName(numberQuestion), //Create name for question
+        answer: createAnswerElement(numberQuestion, numberAnswer), //Create item of answer list
+        label: createLabelElement(numberQuestion, numberAnswer), //Create label and checkbox
+        answerName: createAnswerName(numberQuestion, numberAnswer), //Create name for answer
+        submit: createSubmitElement() //Create button "submit" for form of test
+    }
+    
+    return test;
 }
 
 //=======================================================
 //TEST
 //=======================================================
 
-var test = new CreateTest(3, 3); //Create test: 3 questions and 3 answer for each question
+var test = createTest(3, 3); //Create test: 3 questions and 3 answer for each question
+
+console.log(test.submit);
