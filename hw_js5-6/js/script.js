@@ -65,5 +65,5 @@ function timer() {
             
             timer();
             }
-        }, 1);
+        }, 100);
 }
