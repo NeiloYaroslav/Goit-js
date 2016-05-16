@@ -11,12 +11,58 @@ function createNewElement(elem, elemClass, selector, index) {
     return newElement;
 }
 
+
+
+
+
+
 //=======================================================
 //TIMER
 //=======================================================
 
 var time = 0;
 var running = 0;
+
+function milisecondTime() {
+    return time % 10 + '0';
+}
+
+function secondTime() {
+    var second = Math.floor(time / 10 % 60);
+    
+    if (second < 10) {
+        second = '0' + second;
+    }
+    
+    return second;
+}
+
+function minuteTime() {
+    var minute = Math.floor(time / 10 / 60 % 60);
+    
+    if (minute < 10) {
+        minute = '0' + minute;
+    }
+    
+    return minute;
+}
+
+function hourTime() {
+    var hour = Math.floor(time / 10 / 60 / 60 % 24);
+    
+    if (hour < 10) {
+        hour = '0' + hour;
+    }
+    
+    return hour;
+}
+
+var objTimer = {};
+objTimer.milisecond = milisecondTime();
+objTimer.second = secondTime();
+objTimer.minute = minuteTime();
+objTimer.hour = hourTime();
+console.log(objTimer);
 
 
 var buttonStart = document.querySelector('.timer__start');

@@ -11,6 +11,11 @@ function createNewElement(elem, elemClass, selector, index) {
     return newElement;
 }
 
+
+
+
+
+
 //=======================================================
 //TIMER
 //=======================================================
@@ -18,6 +23,28 @@ function createNewElement(elem, elemClass, selector, index) {
 var time = 0;
 var running = 0;
 
+
+function CreateTimer(time) {
+    this.hour = Math.floor(time / 10 / 60 / 60 % 24);
+    this.minute = Math.floor(time / 10 / 60 % 60);
+    this.second = Math.floor(time / 10 % 60);
+    this.milisecond = time % 10 + '0';
+    
+    if (this.hour < 10) {
+        this.hour = '0' + this.hour;
+    }
+    
+    if (this.minute < 10) {
+        this.minute = '0' + this.minute;
+    }
+    
+    if (this.second < 10) {
+        this.second = '0' + this.second;
+    }
+}
+
+var timerDisplay = new CreateTimer(time);
+console.log(timerDisplay);
 
 var buttonStart = document.querySelector('.timer__start');
 var buttonSplit = document.querySelector('.timer__split');
@@ -27,8 +54,8 @@ var buttonStop = document.querySelector('.timer__stop');
 function startPause() {
     if(running === 0) {
         running = 1;
-        timer();
-        buttonStart.setAttribute('value', 'Pause');
+        displayTimer();
+        buttonStart.setAttribute('value', 'Stop');
         buttonStop.setAttribute('value', 'Reset');
     } else {
         running = 0;
@@ -37,25 +64,25 @@ function startPause() {
     }
 }
 
+var timerSplit = new CreateTimer(time);
+console.log(timerSplit);
+
 function split() {
     var timerValue = createNewElement('li', 'timer__value', '.timer__list-value', 0);
+    function splitTimer() {
+        setTimeout(function(){
+            if(running === 1) {
+                time++;
+                var timerSplit = new CreateTimer(time);
+
+                timerValue.innerHTML = timerSplit.hour + ':' + timerSplit.minute + ':' + timerSplit.second + ':' + timerSplit.milisecond;
+
+                splitTimer();
+            }
+        }, 100);
+    }
     
-    var milisecond = time % 10;
-    var second = Math.floor(time / 10 % 60);
-    var minute = Math.floor(time / 10 / 60 % 60);
-    var hour = Math.floor(time / 10 / 60 / 60 % 24);
-    
-    if (second < 10) {
-        second = '0' + second;
-    }
-    if (minute < 10) {
-        minute = '0' + minute;
-    }
-    if (hour < 10) {
-        hour = '0' + hour;
-    }
-        
-    timerValue.innerHTML = hour + ':' + minute + ':' + second + ':' + milisecond + '0';
+    console.log(timerValue);
 }
 
 //Change value of button Pause/resume on Start, Reset on Stop
@@ -83,30 +110,62 @@ buttonStart.addEventListener('click', startPause);
 buttonSplit.addEventListener('click', split);
 buttonStop.addEventListener('click', reset);
 
-function timer() {
+function displayTimer() {
     setTimeout(function(){
         if(running === 1) {
             time++;
-            var milisecond = time % 10;
-            var second = Math.floor(time / 10 % 60);
-            var minute = Math.floor(time / 10 / 60 % 60);
-            var hour = Math.floor(time / 10 / 60 / 60 % 24);
+            var timerDisplay = new CreateTimer(time);
             
-        
-            if (second < 10) {
-                second = '0' + second;
-            }
-            if (minute < 10) {
-                minute = '0' + minute;
-            }
-            if (hour < 10) {
-                hour = '0' + hour;
-            }
+            var display =  document.querySelector('.timer__display');
+            display.innerHTML = timerDisplay.hour + ':' + timerDisplay.minute + ':' + timerDisplay.second + ':' + timerDisplay.milisecond;
             
-            var timerDisplay =  document.querySelector('.timer__display');
-            timerDisplay.innerHTML = hour + ':' + minute + ':' + second + ':' + milisecond + '0';
-            
-            timer();
-            }
-        }, 100);
+            displayTimer();
+        }
+    }, 100);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+//function milisecondTime() {
+//    return time % 10 + '0';
+//}
+//
+//function secondTime() {
+//    var second = Math.floor(time / 10 % 60);
+//    
+//    if (second < 10) {
+//        second = '0' + second;
+//    }
+//    
+//    return second;
+//}
+//
+//function minuteTime() {
+//    var minute = Math.floor(time / 10 / 60 % 60);
+//    
+//    if (minute < 10) {
+//        minute = '0' + minute;
+//    }
+//    
+//    return minute;
+//}
+//
+//function hourTime() {
+//    var hour = Math.floor(time / 10 / 60 / 60 % 24);
+//    
+//    if (hour < 10) {
+//        hour = '0' + hour;
+//    }
+//    
+//    return hour;
+//}
