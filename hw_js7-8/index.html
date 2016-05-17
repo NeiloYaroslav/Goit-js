@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>JavaScript#7-8</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script> 
+</head>
+<body>
+	<div class="wrapper">
+	    <div class="tabs">
+	        <ul class="tabs__menu">
+	            <li class="tabs__menu-item">
+	                <a href="#tab1" class="tabs__menu-link tabs__menu-active">Tooltip tab</a>
+	            </li>
+	            <li class="tabs__menu-item">
+	                <a href="#tab2" class="tabs__menu-link">Second tab</a>
+	            </li>
+	            <li class="tabs__menu-item">
+	                <a href="#tab3" class="tabs__menu-link">Third tab</a>
+	            </li>
+	        </ul>
+            <div class="tabs__body">
+                <div class="tabs__item tabs__item-active" id="tab1">
+                    <form action="#" class="tabs__form">
+	                    <fieldset class="tabs__fieldset">
+                            <legend class="tabs__legend"></legend>
+                            <label class="tabs__label">
+                                <p class="tabs__label-name">Firstname:</p>
+                                <input type="text" class="tabs__input-text">
+                                <span class="tabs__input-tooltip">Please, enter your firstname here</span>
+                            </label>
+                            <label class="tabs__label">
+                                <p class="tabs__label-name">Lastname:</p>
+                                <input type="text" class="tabs__input-text">
+                                <span class="tabs__input-tooltip">Please, enter your lastname here</span>
+                            </label>
+                            <label class="tabs__label">
+                                <p class="tabs__label-name">Address:</p>
+                                <input type="text" class="tabs__input-text">
+                                <span class="tabs__input-tooltip">Please, enter your address here</span>
+                            </label>
+                        </fieldset>
+	                    <input type="submit" class="tabs__form-submit" value="Show me tooltips">
+	                </form>
+                </div>
+                <div class="tabs__item" id="tab2">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel molestiae ab quia illo nulla? Velit at possimus numquam porro tempora odio maiores recusandae aliquid commodi nostrum ex, pariatur necessitatibus libero!</p>
+	                <p>At, quam illum, alias hic harum porro, laboriosam a amet dolores iusto tempora. Ipsam suscipit nam tenetur accusamus, vitae, dolores voluptates possimus saepe explicabo laborum nulla facere quidem ex velit.</p>
+                </div>
+                <div class="tabs__item" id="tab3">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente aliquid ab rerum reiciendis perferendis, pariatur quas alias iure incidunt, cumque ipsam repellendus omnis dolor distinctio voluptas magni, sint sunt nostrum!</p>
+                </div>
+            </div>
+	    </div>
+	</div>
+	<script src="js/script.js"></script>
+</body>
+</html>
