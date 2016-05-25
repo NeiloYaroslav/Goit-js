@@ -23,40 +23,22 @@
     
 })();
 
-
-//Carusel
+//Slider
 ;(function(){
-    
-    var $leftArrow = $('.slider__leftArrow');
-    var $rigthArrow = $('.slider__rightArrow');
-    var $sliderImage = $('.slider__item');
-    var $imageWidth = $('.slider__item').outerWidth();
-    
-    $leftArrow.on('click', function(){
-        $sliderImage.animate({left: '+=' + $imageWidth + 'px'}, 1000);
-    });
-    
-    $rigthArrow.on('click', function(){
-        $sliderImage.animate({left: '-=' + $imageWidth + 'px'}, 1000);
-    });
-    
+    $(document).ready(function(){ 
+        $('.slider').carousel({
+            autoplay: false, // Enables auto play of slides
+            autoplaySpeed: 3000, // Auto play change interval
+            dots: true, // dots navigation
+            arrows: true, // Next/Prev arrows
+            infinite: true, // Infinite looping
+            speed: 200, // Transition speed
+            swipe: true // touch swipe
+        });
+    });    
 })();
-
-//Select
-
-;(function(){
-    $(document).ready(function(){
-	   $("select").selecter({
-           customClass: 'select__jquery'
-       });
-    });
-    
-    
-})();
-
 
 //Checkbox
-
 ;(function(){
     $(document).ready(function(){
         $(".checkbox__box").labelauty({
@@ -88,57 +70,13 @@
 	});   
 })();
 
-//Slider
+//Select
 ;(function(){
     $(document).ready(function(){
-        $('.slider__list').hiSlider({
-          // start index
-          startSlide: 0,
-          // item selector
-          item: '.slider__item',
-          // fullscreen mode
-          isFullScreen: false,
-          // flexible layout
-          isFlexible: false,
-          // touch events support
-          isSupportTouch: '__proto__' in {},
-          // enable pagination
-          isShowPage: true,
-          // enable title bar
-          isShowTitle: true,
-          // title attribute
-          titleAttr: 'data-title',
-          // enable navigation
-          isShowControls: true,
-          // autoplay
-          isAuto: true,
-          // autoplay interval
-          intervalTime: 5000,
-          // animation speed
-          affectTime: 300,
-          // fade || move
-          mode: 'move',
-          // left || top
-          direction: 'left',
-          // callbacks
-          onSwipeStart: $.noop,
-          onSwipeMove: $.noop,
-          minSwipeLength: 30,
-          onSwipeCancel: $.noop,
-          onSwipeEnd: $.noop,
-          onSwipeLeft: $.noop,
-          onSwipeRight: $.noop,
-          onSwipeTop: $.noop,
-          onSwipeBottom: $.noop,
-          onInited:  $.noop,
-          onMoveBefore: $.noop,
-          onMoveAfter: $.noop,
-          onSelected: $.noop
-
-        });
- 
-        
-    });    
+	   $("select").selecter({
+           customClass: 'select__jquery'
+       });
+    });
 })();
 
 
