@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>JS - Template</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+	<script src="js/template.js"></script>
+	<script src="js/script.js"></script>
+	
+</head>
+<body>
+    
+    <div class="wrapper">
+        <div class="header horizontalLine">
+            <h1 class="header__name">Template</h1>
+        </div>
+        <script type="text/template" id="resume">
+            <div class="content horizontalLine">
+                <h2 class="content__headName">
+                    <%= contact.name %>
+                </h2>
+            </div>
+        </script>
+        <footer class="footer horizontalLine">
+            <p class="footer__design">Design by Neilo Y. 2016</p>
+        </footer>
+    </div>
+    
+<!--
+    <div class="content horizontalLine">
+                <h2 class="content__headName">Неило Ярослав Владимирович</h2>
+                <img class="content__img" src="img/neilo.jpg" alt="Неило Ярослав">
+                <p class="content__paragraph center">Окончил дорожно-строительный факультет Национального транспортного университета (НТУ) по специальности &laquo;Мосты и транспортные тоннели&raquo;</p>
+                <p class="content__paragraph horizontalLine">Хочу учить FrontEnd, потому что:</p>
+                <ul class="content__list">
+                   <li class="content__item">Сезонность заработка уже порядком надоела</li>
+                   <li class="content__item">Хочеться работать дома в свободном режиме (и дом чтобы находился в теплых странах)</li>
+                   <li class="content__item">Хочеться развиваться, а не топтаться на месте</li>
+                </ul>
+                <p class="content__paragraph horizontalLine">Мой контактный телефон:</p>
+                <p class="content__paragraph">+380957300734</p>
+                <p class="content__paragraph">Мой профиль вконтакте:</p>
+                <p class="content__paragraph">
+                    <a href="http://vk.com/neiloyv" target="_blank" title="Неило Ярослав Вконтакте">vk.com/neiloyv</a>
+                </p>
+                <p class="content__paragraph horizontalLine">Мой feedback:</p>
+                <p class="content__paragraph">Тише едишь - дальше будешь</p>
+            </div>
+-->
+    
+    
+    
+</body>
+</html>
