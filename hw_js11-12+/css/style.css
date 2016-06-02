@@ -9,6 +9,7 @@
     display: block;
     margin: 20px 0;
     border-top: 1px solid #ccc;
+    box-shadow: 0 0 5px #bbb;
 }
 
 .center {
@@ -18,7 +19,7 @@
 
 body {
     background: #ece6e6;
-    font-family: comic-sans, ariel, sans-serif;
+    font-family: tahoma, ariel, sans-serif;
 }
 
 .wrapper {
@@ -39,32 +40,40 @@ body {
 
 /*=====CONTENT=====*/
 
-.content {
+.resume {
     margin: 20px;
 }
 
-.content__headName {
+.resume__name {
     text-align: center;
     font-size: 18px;
     text-decoration: underline;
 }
 
-.content__img {
+.resume__img {
     display: block;
-    margin: 10px auto;
+    margin: 20px auto;
+    border: 5px double #bbb;
+    box-shadow: 0 0 5px #888;
+
+    
 }
 
-.content__paragraph {
-    line-height: 20px;
-}
-
-.content__list {
-    margin: 20px 40px;
-    list-style: circle;
-}
-
-.content__item {
+.resume__item {
     margin: 10px;
+    
+}
+
+.resume__title {
+    float: left;
+    width: 20%;
+}
+
+.resume__text {
+    width: 80%;
+    margin-left: 20%;
+    margin-bottom: 5px;
+    line-height: 18px;
 }
 
 
