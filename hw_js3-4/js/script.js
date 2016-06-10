@@ -134,13 +134,25 @@ function createLabelElement(numberQuestion, numberAnswer) {
 
 //Insert inner name for answer
 function createAnswerName(numberQuestion, numberAnswer) {
-    var parrentAnswer = document.querySelectorAll('.test__answer');
+//    var parrentAnswer = document.querySelectorAll('.test__answer');
     var arrAnswerName = [];
     var numberAnswerName = numberQuestion * numberAnswer;
     
-    for (var i = 0; i < numberAnswerName; i++) {
-        var answerName = parrentAnswer[i].innerHTML = 'Answer #' + (i + 1);
-        arrAnswerName.push(answerName);
+    var listAnswer = document.querySelectorAll('.test__list-answer');
+    
+    
+    for (var i = 0; i < numberQuestion; i++) {
+        
+        var parrentAnswer = listAnswer[i].querySelectorAll('.test__answer');
+        
+        for (var j = 0; j < numberAnswer; j++){
+            
+            var answerName = parrentAnswer[j].innerHTML = 'Answer #' + (j + 1);
+            
+            arrAnswerName.push(answerName);
+            
+        }
+        
     }
     
     return arrAnswerName;
