@@ -13,7 +13,7 @@
         this.weight = 65;
     }
     
-    function Worker(){
+    function Workman(){
         this.job = 'GoIT';
         this.wage = 1000;
         this.worker = function(){
@@ -29,10 +29,10 @@
         };
     }
     
-    Worker.prototype = new Human();
+    Workman.prototype = new Human();
     Student.prototype = new Human();
     
-    var WorkerYaroslav = new Worker();
+    var WorkerYaroslav = new Workman();
     
     WorkerYaroslav.name = 'Yaroslav';
     WorkerYaroslav.age = 26;
@@ -47,7 +47,7 @@
     
     console.log('WorkerYaroslav', WorkerYaroslav);
     
-     var WorkerRoman = new Worker();
+    var WorkerRoman = new Workman();
     
     WorkerRoman.name = 'Roman';
     WorkerRoman.age = 28;
@@ -84,14 +84,13 @@
     StudentRoman.gender = 'man';
     StudentRoman.height = 175;
     StudentRoman.weight = 75;
-    StudentRoman.university = 'KPI';
+    StudentRoman.university = 'National Technical University of Ukraine "Kyiv Polytechnic Institute"';
     StudentRoman.stipend = 70;
     StudentRoman.watch = function(){
         alert('I am watching TV');  
     };
     
     console.log('StudentRoman', StudentRoman);
-    
 });
 
 

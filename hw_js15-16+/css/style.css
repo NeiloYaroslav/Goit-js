@@ -58,6 +58,9 @@ body {
 }
 
 /*=====OOP=====*/
+.oop {
+    margin: 10px 20px;
+}
 
 .text {
     text-align: center;
