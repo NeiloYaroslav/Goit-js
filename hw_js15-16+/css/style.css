@@ -1,0 +1,76 @@
+body {
+    background: #ece6e6;
+    font-family: tahoma, ariel, sans-serif;
+}
+
+.wrapper {
+    width: 480px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 5px #888;
+}
+
+.clearfix:after {
+	content: " ";
+	display: block;
+	clear: both;
+}
+
+.horizontal-line:before {
+    content: "";
+    display: block;
+    margin: 20px 0;
+    border-top: 1px solid #ccc;
+    box-shadow: 0 0 5px #bbb;
+}
+
+.display-none {
+    display: none;
+}
+
+/*=====HEADER=====*/
+
+.header__name {
+    font-size: 16px;
+    text-align: center;
+    line-height: 20px;
+}
+
+/*====TASK====*/
+
+.header__task {
+    padding: 10px 0;
+    list-style: decimal;
+}
+
+.task__link {
+    
+}
+
+.task__list {
+    list-style: decimal;
+}
+
+.task__item {
+    margin: 10px 0 10px 20px;
+    line-height: 18px;
+}
+
+/*=====OOP=====*/
+
+.text {
+    text-align: center;
+    font-size: 14px;
+}
+
+
+/*=====FOOTER=====*/
+.footer {
+    margin: 10px 20px;
+    text-align: right;
+}
+
+.footer__design {
+    margin: 0 20px;
+}
