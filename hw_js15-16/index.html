@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>AJAX</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+	<script src="js/template.js"></script>
+	<script src="js/task.js"></script>
+</head>
+<body>
+	<div class="wrapper">
+        <div class="header">
+            <h1 class="header__name">AJAX</h1>
+            <div class="header__task">
+                <a href="#" id="task__show" class="task__link">Посмотреть задание</a>
+                <ol class="task__list display-none">
+                    <li class="task__item">
+                        Сделать форму поиска как на `google.com` - должно быть поле для ввода запроса, и кнопка отправить. Так же отправка поискового запроса должна осуществляться по нажатию кнопки `Enter`.
+                    </li>
+                    <li class="task__item word-break">
+                        Сделать запрос на Google API. Тестовый API-ключ для поиска Google -  `ABQIAAAACKQaiZJrS0bhr9YARgDqUxQBCBLUIYB7IF2WaNrkYqF0tBovNBQFDtM_KNtb3xQxWff2mI5hipc3lg`
+                    </li>
+                    <li class="task__item">
+                        Вывести результаты поиска под форму. Дизайн постараться сделать близким к дизайну `google.com`.
+                    </li>
+                </ol>
+                <a href="#" id="task__hide" class="task__link display-none">Свернуть</a>
+            </div>
+        </div>
+        <div class="search horizontal-line">
+            <div class="search__form">   
+                <form action="#" class="form">
+                    <input type="search" class="form__search" id="search-input" placeholder="Найду все то смогу!.. а поможет мне в этом Google">
+                    <input type="submit" class="form__button" value="Go!">
+                </form>
+            </div> 
+        </div>
+        <div class="search__articls horizontal-line">
+            <div class="articl__item">
+                <a class="articl__link"></a>
+                <a href="#" class="articl__url"></a>
+                <p class="articl__description"></p>
+            </div>
+        </div>
+        
+        <footer class="footer horizontal-line">
+            <p class="footer__design">Design by Neilo Y. 2016</p>
+        </footer>
+    </div>
+
+	<script src="js/script.js"></script>
+</body>
+</html>
