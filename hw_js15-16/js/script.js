@@ -5,21 +5,23 @@
 ;$(function(){
     'use strict';
     
-    function GoogleCallback(jQueryObj, data){
-        console.log('data', data);
-    }
-    
-    
-    
-    
     
     $('.form__button').on('click', function(){
-        console.log($('#search-input').val());
+        
+        var userQuery = $('#search-input').val();
+        
+        console.log(userQuery);
         
         $.ajax({
-            url: 'http://ajax.googleapis.com/ajax/services/search/web?v=1.0?key=ABQIAAAACKQaiZJrS0bhr9YARgDqUxQBCBLUIYB7IF2WaNrkYqF0tBovNBQFDtM_KNtb3xQxWff2mI5hipc3lg&q=' + $('#search-input').val() + '&callback=GoogleCallback&context=?',
+            url: 'http://search.yahooapis.com/WebSearchService/V1/webSearch?appid=YahooDemo&output=json&query=' + userQuery + '&callback=?',
             method: 'POST',
-            dataType : 'jsonp'
+            dataType : 'jsonp',
+            success: function (data) {
+                console.log('data', data);
+            },
+            error: function(){
+                console.log('error');
+            }
         });
          
     });
