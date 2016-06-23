@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+    <script src="http://vk.com/js/api/xd_connection.js?2" type="text/javascript"></script>
 	<script src="js/template.js"></script>
 	<script src="js/task.js"></script>
 </head>
@@ -17,13 +18,10 @@
                 <a href="#" id="task__show" class="task__link">Посмотреть задание</a>
                 <ol class="task__list display-none">
                     <li class="task__item">
-                        Сделать форму поиска как на `google.com` - должно быть поле для ввода запроса, и кнопка отправить. Так же отправка поискового запроса должна осуществляться по нажатию кнопки `Enter`.
-                    </li>
-                    <li class="task__item word-break">
-                        Сделать запрос на Google API. Тестовый API-ключ для поиска Google -  `ABQIAAAACKQaiZJrS0bhr9YARgDqUxQBCBLUIYB7IF2WaNrkYqF0tBovNBQFDtM_KNtb3xQxWff2mI5hipc3lg`
+                        Сделать форму поиска картинок на `pixabay.com` - должно быть поле для ввода запроса, и кнопка отправить. Так же отправка поискового запроса должна осуществляться по нажатию кнопки `Enter`.
                     </li>
                     <li class="task__item">
-                        Вывести результаты поиска под форму. Дизайн постараться сделать близким к дизайну `google.com`.
+                        Вывести результаты поиска под форму. Дизайн личный`.
                     </li>
                 </ol>
                 <a href="#" id="task__hide" class="task__link display-none">Свернуть</a>
@@ -37,12 +35,8 @@
                 </form>
             </div> 
         </div>
-        <div class="search__articls horizontal-line">
-            <div class="articl__item">
-                <a class="articl__link"></a>
-                <a href="#" class="articl__url"></a>
-                <p class="articl__description"></p>
-            </div>
+        <div class="search__result horizontal-line display-none">
+            <div class="search__img"></div>
         </div>
         
         <footer class="footer horizontal-line">
