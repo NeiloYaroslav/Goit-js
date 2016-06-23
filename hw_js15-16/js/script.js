@@ -5,7 +5,6 @@
 ;$(function(){
     'use strict';
     
-    
     $('.form__button').on('click', function(){
         
         if ($('.search__result').find('.img__item')){
@@ -29,5 +28,3 @@
         });
     });
 });
-
-

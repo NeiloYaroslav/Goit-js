@@ -39,10 +39,6 @@ body {
     display: none;
 }
 
-.word-break {
-    word-break: break-all;  
-}
-
 /*=====HEADER=====*/
 
 .header__name {
@@ -150,7 +146,6 @@ body {
     margin: 5px;
 }
 
-
 /*=====FOOTER=====*/
 .footer {
     height: 80px;
@@ -161,4 +156,3 @@ body {
 .footer__design {
     padding: 10px 20px;
 }
-
