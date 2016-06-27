@@ -2,35 +2,41 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>17-18</title>
+    <title>Grunt</title>
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
-	<script src="js/task.js"></script>
-	<script src="js/script.js"></script>
+	<script src="js/dist/script.main.min.js"></script>
 </head>
 <body>
 	<div class="wrapper">
         <div class="header">
-            <h1 class="header__name">17-18</h1>
+            <h1 class="header__name">Grunt</h1>
             <div class="header__task">
                 <a href="#" id="task__show" class="task__link">Посмотреть задание</a>
                 <ol class="task__list display-none">
                     <li class="task__item">
-                        Сделать форму поиска картинок на `pixabay.com` - должно быть поле для ввода запроса, и кнопка отправить. Так же отправка поискового запроса должна осуществляться по нажатию кнопки `Enter`.
+                        Установить [node.js].
                     </li>
                     <li class="task__item">
-                        Вывести результаты поиска под форму. Дизайн личный`.
+                        Установить [grunt.js].
+                    </li>
+                    <li class="task__item">
+                        Настроить сборку простого проекта. Должны выполняться задачи по конкатенации и минификации ваших `js` и `css` файлов.
+                    </li>
+                    <li class="task__item">
+                        Обычно системную папку `node_modules` принято добавлять в [.gitignore].
                     </li>
                 </ol>
                 <a href="#" id="task__hide" class="task__link display-none">Свернуть</a>
             </div>
         </div>
-        
+        <div class="grunt horizontal-line">
+            <p class="grunt__text">Решение задания смотри в консоли и в папке проекта</p>
+        </div>
         <footer class="footer horizontal-line">
             <p class="footer__design">Design by Neilo Y. 2016</p>
         </footer>
     </div>
-
 </body>
 </html>

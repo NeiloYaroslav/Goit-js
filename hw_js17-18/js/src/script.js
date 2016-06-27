@@ -4,9 +4,5 @@
 
 ;$(function(){
     'use strict';
-    
-    console.log('This is new script file');    
-    
+    console.log('This is new script file #1');      
 });
-
-

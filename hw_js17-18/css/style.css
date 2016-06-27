@@ -22,7 +22,7 @@ body {
 }
 
 .clearfix:after {
-	content: " ";
+	content: "";
 	display: block;
 	clear: both;
 }
@@ -37,10 +37,6 @@ body {
 
 .display-none {
     display: none;
-}
-
-.word-break {
-    word-break: break-all;  
 }
 
 /*=====HEADER=====*/
@@ -66,20 +62,31 @@ body {
 .task__item {
     margin: 10px 0 10px 20px;
     line-height: 18px;
-
 }
 
-/*=====  =====*/
+/*=====GRUNT=====*/
+.grunt {
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+}
 
+.grunt__text {
+    height: 100%;
+    margin: 0 auto;
+    font-size: 16px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 /*=====FOOTER=====*/
 .footer {
     height: 80px;
-    margin: 2.5%;
     text-align: right;
 }
 
 .footer__design {
     padding: 10px 20px;
 }
-

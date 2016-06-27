@@ -1,17 +1,22 @@
 {
-  "name": "hwgrunt",
+  "name": "grunt",
   "version": "1.0.0",
-  "description": "Homework with node, npm, grunt",
-  "main": "index.js",
+  "description": "Домашнее задание:",
+  "main": "gruntfile.js",
+  "dependencies": {
+    "clean-css": "^3.4.18",
+    "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-imagemin": "^1.0.1",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-csso": "^1.0.0",
+    "grunt-revizor": "^0.1.0"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "neilo",
-  "license": "ISC",
-  "devDependencies": {
-    "grunt": "^1.0.1",
-    "grunt-contrib-concat": "^1.0.1",
-    "grunt-contrib-uglify": "^1.0.1"
-  },
-  "dependencies": {}
+  "author": "",
+  "license": "ISC"
 }
