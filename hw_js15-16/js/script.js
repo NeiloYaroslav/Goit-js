@@ -5,8 +5,7 @@
 ;$(function(){
     'use strict';
     
-    $('.form__button').on('click', function(){
-        
+    function getImage(){
         if ($('.search__result').find('.img__item')){
             $('.img__item').remove();
         };
@@ -26,5 +25,12 @@
                 };
             }
         });
+    }
+    
+    $('.form__button').on('click', getImage);
+    $('.form__search').keydown(function(eventObject){
+        if (eventObject.which === 13){
+            getImage();
+        };
     });
 });

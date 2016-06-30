@@ -1,16 +1,10 @@
-html {
-    height: 100%;
-}
-
 body {
-    height: 100%;
     background: #ece6e6;
-    font-family: tahoma, ariel, sans-serif;
+    font-family: tahoma, arial, sans-serif;
 }
 
 .wrapper {
     width: 760px;
-    min-height: 100%;
     margin: 0 auto;
     padding: 0 20px;
     background: #fff;
@@ -21,13 +15,13 @@ body {
     flex: auto;
 }
 
-.clearfix:after {
-	content: " ";
+.clearfix::after {
+	content: "";
 	display: block;
 	clear: both;
 }
 
-.horizontal-line:before {
+.horizontal-line::before {
     content: "";
     display: block;
     margin: 20px 0;
@@ -62,7 +56,6 @@ body {
 .task__item {
     margin: 10px 0 10px 20px;
     line-height: 18px;
-
 }
 
 /*=====SEARCH=====*/
@@ -74,7 +67,6 @@ body {
 
 .search__form {
     width: 650px;
-    height: 100%;
     margin: 0 auto;
     
     display: flex;
