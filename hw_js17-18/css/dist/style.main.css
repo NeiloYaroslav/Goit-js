@@ -1,0 +1,139 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0; /* обнуляем внешние отступы */
+    padding: 0; /* обнуляем внутренние отступы */
+    border: 0; /* убираем бордюры */
+    outline: 0; /* убираем контуры */
+    font-size: 100%; /* задаем базовый размер шрифта, значение по умолчанию = 16px */
+    vertical-align: baseline; /* устанавливаем базовое вертикальное выравнивание */
+    background: transparent; /* устанавливаем фон прозрачным */
+}
+body {
+    line-height: 1; /* устанавливаем базовую высоту */
+}
+ol, ul {
+    list-style: none; /* убираем маркеры для нумерованных и обычных списков */
+}
+blockquote, q {
+	    quotes: none; /* убираем кавычки для цитат */
+}
+blockquote:before, 
+blockquote:after,
+q:before,
+q:after {
+    content: ''; /* убираем */
+    content: none; /* и скрываем генерируемое содержимое */
+}
+:focus {
+    outline: 0; /* убираем контуры вокруг ссылок при фокусе */
+}
+ins {
+    text-decoration: none; /* убираем подчеркивание для вставленного текста */
+}
+del {
+    text-decoration: line-through; /* убираем перечеркивание для удаленного текста */
+}
+table {
+    border-collapse: collapse; /* убираем рамки двойной толщины */
+    border-spacing: 0; /* убираем расстояние между ячейками */
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100%;
+    background: #ece6e6;
+    font-family: tahoma, arial, sans-serif;
+}
+
+.wrapper {
+    width: 760px;
+    min-height: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    background: #fff;
+    box-shadow: 0 0 5px #888;
+    
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+}
+
+.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.horizontal-line:before {
+    content: "";
+    display: block;
+    margin: 20px 0;
+    border-top: 1px solid #ccc;
+    box-shadow: 0 0 5px #bbb;
+}
+
+.display-none {
+    display: none;
+}
+
+/*=====HEADER=====*/
+
+.header__name {
+    padding-top: 20px;
+    font-size: 16px;
+    text-align: center;
+    line-height: 20px;
+}
+
+/*====TASK====*/
+
+.header__task {
+    padding: 10px 0;
+    list-style: decimal;
+}
+
+.task__list {
+    list-style: decimal;
+}
+
+.task__item {
+    margin: 10px 0 10px 20px;
+    line-height: 18px;
+}
+
+/*=====GRUNT=====*/
+.grunt {
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+}
+
+.grunt__text {
+    height: 100%;
+    margin: 0 auto;
+    font-size: 16px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*=====FOOTER=====*/
+.footer {
+    height: 80px;
+    text-align: right;
+}
+
+.footer__design {
+    padding: 10px 20px;
+}

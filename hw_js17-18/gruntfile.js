@@ -8,11 +8,15 @@ module.exports = function(grunt) {
         concat: {
             // Настройка для объединения файлов находится тут
             options: {
-                separator: ';',
+                separator: '',
             },
             js: {
                 src: ['js/src/*.js'],
                 dest: 'js/dist/script.main.js',
+            },
+            css: {
+                src: ['css/src/*.css'],
+                dest: 'css/dist/style.main.css',
             }
         },
         uglify: {
@@ -25,9 +29,9 @@ module.exports = function(grunt) {
             target: {
                 files: [{
                     expand: true,
-                    cwd: 'css',
-                    src: ['style.css', '!*.min.css'],
-                    dest: 'css',
+                    cwd: 'css/dist',
+                    src: ['style.main.css', '!*.min.css'],
+                    dest: 'css/dist',
                     ext: '.min.css'
                 }]
             }
