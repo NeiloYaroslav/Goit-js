@@ -28,7 +28,7 @@
     }
     
     function removeDisabled(){
-        $('.disabled').removeClass('disabled');
+        $('.form__button').removeClass('disabled');
     }
     
     function disabled(){
