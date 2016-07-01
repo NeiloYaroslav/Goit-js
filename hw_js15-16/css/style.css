@@ -33,6 +33,13 @@ body {
     display: none;
 }
 
+.disabled {
+    pointer-events: none;
+    border: 1px solid #ddd !important; 
+    background: #fff !important;
+    color: #ddd;
+}
+
 /*=====HEADER=====*/
 
 .header__name {
@@ -97,6 +104,7 @@ body {
 .form__button:hover {
     border: 1px solid #888;
     background: transparent;
+    cursor: pointer;
 }
 
 .form__button:active {

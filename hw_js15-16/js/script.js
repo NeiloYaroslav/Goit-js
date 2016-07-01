@@ -27,7 +27,17 @@
         });
     }
     
+    function removeDisabled(){
+        $('.disabled').removeClass('disabled');
+    }
+    
+    function disabled(){
+        $('.form__button').addClass('disabled');
+        setTimeout(removeDisabled,3000);
+    }
+    
     $('.form__button').on('click', getImage);
+    $('.form__button').on('click', disabled);
     $('.form__search').keydown(function(eventObject){
         if (eventObject.which === 13){
             getImage();
